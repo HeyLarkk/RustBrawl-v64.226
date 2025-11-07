@@ -10,5 +10,5 @@ An experimental attempt at creating a Brawl Stars server emulator in Rust.
 Don’t expect this to work in production it’s mostly for learning and fun.
 
 # Client
-You need to implement the client yourself.
-(Ill probably make a client someday… but im lazy..)
+You need to create the Client yourself. The scripts are already in the repo; you only need to add the Frida gadget.
+I have made the script for the Client for all architectures (Android ARM32, Android ARM64, iOS).
