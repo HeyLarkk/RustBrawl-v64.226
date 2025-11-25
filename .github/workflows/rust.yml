@@ -1,0 +1,29 @@
+name: Build macOS dylib
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build-macos:
+    runs-on: macos-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Build Release dylib
+        run: cargo build --release
+
+      - name: Upload dylib artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: rustbrawl-dylib
+          path: target/release/*.dylib
